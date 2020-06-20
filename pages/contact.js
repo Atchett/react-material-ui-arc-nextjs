@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Head from "next/head";
 
 import { Grid, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/styles";
@@ -8,14 +9,14 @@ import CallToAction from "../src/components/pages/Contact/CallToAction/CallToAct
 
 const useStyles = makeStyles((theme) => ({
   background: {
-    backgroundImage: url("/assets/background.jpg"),
+    backgroundImage: `url("/assets/background.jpg")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     height: "60em",
     paddingBottom: "10em",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: url("/assets/mobileBackground.jpg"),
+      backgroundImage: `url("/assets/mobileBackground.jpg")`,
     },
   },
   formContainer: {
@@ -41,36 +42,61 @@ const Contact = (props) => {
   const matchesXs = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
-    <Grid container direction="row">
-      <Grid
-        item
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        lg={4}
-        xl={3}
-        className={classes.formContainer}
-      >
-        <Form
-          matchesMd={matchesMd}
-          matchesXs={matchesXs}
-          matchesSm={matchesSm}
+    <Fragment>
+      <Head>
+        <title key="title">Contact Us | Arc Development</title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
         />
+        <meta
+          property="og:title"
+          content="Contact Us | Arc Development"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          content="https://arc.com/contact"
+          key="og:url"
+        />
+        <link rel="canonical" key="canonical" href="https://arc.com/contact" />
+      </Head>
+      <Grid container direction="row">
+        <Grid
+          item
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+          lg={4}
+          xl={3}
+          className={classes.formContainer}
+        >
+          <Form
+            matchesMd={matchesMd}
+            matchesXs={matchesXs}
+            matchesSm={matchesSm}
+          />
+        </Grid>
+        <Grid
+          item
+          container
+          direction={matchesMd ? "column" : "row"}
+          className={classes.background}
+          lg={8}
+          xl={9}
+          alignItems="center"
+          justify={matchesMd ? "center" : undefined}
+        >
+          <CallToAction
+            matchesMd={matchesMd}
+            setValue={setValue}
+            theme={theme}
+          />
+        </Grid>
       </Grid>
-      <Grid
-        item
-        container
-        direction={matchesMd ? "column" : "row"}
-        className={classes.background}
-        lg={8}
-        xl={9}
-        alignItems="center"
-        justify={matchesMd ? "center" : undefined}
-      >
-        <CallToAction matchesMd={matchesMd} setValue={setValue} theme={theme} />
-      </Grid>
-    </Grid>
+    </Fragment>
   );
 };
 

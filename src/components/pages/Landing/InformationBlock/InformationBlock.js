@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 10,
   },
   infoBackground: {
-    backgroundImage: "url('/assets/infoBackground.svg')",
+    backgroundImage: `url('/assets/infoBackground.svg')`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

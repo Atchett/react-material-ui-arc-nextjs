@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { cloneDeep } from "lodash";
+import Head from "next/head";
 
 import {
   Grid,
@@ -190,182 +191,205 @@ const Estimate = () => {
   };
 
   return (
-    <Grid container direction="row">
-      <Grid
-        item
-        container
-        direction="column"
-        lg
-        alignItems={matchesMd ? "center" : undefined}
-      >
-        <Grid
-          item
-          style={{ marginTop: "2em", marginLeft: matchesMd ? 0 : "5em" }}
-        >
-          <Typography variant="h2" align={matchesMd ? "center" : undefined}>
-            Estimate
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          style={{
-            marginRight: matchesMd ? 0 : "10em",
-            maxWidth: "50em",
-            marginTop: "7.5em",
-          }}
-        >
-          <Animation
-            animationData={estimateAnimation}
-            height="100%"
-            width="100%"
-          />
-        </Grid>
-      </Grid>
-      <Grid
-        item
-        container
-        direction="column"
-        alignItems="center"
-        lg
-        style={{ marginRight: matchesMd ? 0 : "2em", marginBottom: "25em" }}
-      >
-        {questions
-          .filter((question) => question.active)
-          .map((question, index) => (
-            <Fragment key={`${question.id}-${index}`}>
-              <Grid item>
-                <Typography
-                  variant="h2"
-                  align="center"
-                  style={{
-                    fontSize: "2.25rem",
-                    fontWeight: 500,
-                    marginTop: "5em",
-                    lineHeight: "1.25",
-                    marginLeft: matchesSm ? "1em" : 0,
-                    marginRight: matchesSm ? "1em" : 0,
-                  }}
-                >
-                  {question.title}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  style={{ marginBottom: "2.5em" }}
-                  gutterBottom
-                >
-                  {question.subtitle}
-                </Typography>
-              </Grid>
-              <Grid item container>
-                {question.options.map((option, index) => (
-                  <Grid
-                    key={`${option.id}-${index}`}
-                    item
-                    container
-                    direction="column"
-                    md
-                    component={Button}
-                    onClick={() => handleSelect(option.id)}
-                    style={{
-                      display: "grid",
-                      textTransform: "none",
-                      borderRadius: 0,
-                      backgroundColor: option.selected
-                        ? theme.palette.common.orange
-                        : null,
-                      marginBottom: matchesSm ? "1.5em" : 0,
-                    }}
-                  >
-                    <Grid item style={{ maxWidth: "14em" }}>
-                      <Typography
-                        variant="h6"
-                        align="center"
-                        style={{ marginBottom: "1em" }}
-                      >
-                        {option.title}
-                      </Typography>
-                      <Typography variant="caption" align="center">
-                        {option.subtitle}
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <img
-                        src={option.icon}
-                        alt={option.iconAlt}
-                        className={classes.icon}
-                      />
-                    </Grid>
-                  </Grid>
-                ))}
-              </Grid>
-            </Fragment>
-          ))}
-
+    <Fragment>
+      <Head>
+        <title key="title">
+          Free custom software estimate | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
+        />
+        <meta
+          property="og:title"
+          content="Free custom software estimate | Arc Development"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          content="https://arc.com/estimate"
+          key="og:url"
+        />
+        <link rel="canonical" key="canonical" href="https://arc.com/estimate" />
+      </Head>
+      <Grid container direction="row">
         <Grid
           item
           container
-          justify="space-between"
-          style={{ width: "18em", marginTop: "3em" }}
+          direction="column"
+          lg
+          alignItems={matchesMd ? "center" : undefined}
         >
-          <Grid item>
-            <IconButton
-              disabled={navigationPrevDisabled()}
-              onClick={prevQuestion}
-            >
-              <img
-                src={
-                  navigationPrevDisabled()
-                    ? "/assets/backArrowDisabled.svg"
-                    : "/assets/backArrow.svg"
-                }
-                alt="previous question"
-              />
-            </IconButton>
-          </Grid>
-          <Grid item>
-            <IconButton
-              disabled={navigationNextDisabled()}
-              onClick={nextQuestion}
-            >
-              <img
-                src={
-                  navigationNextDisabled()
-                    ? "/assets/forwardArrowDisabled.svg"
-                    : "/assets/forwardArrow.svg"
-                }
-                alt="next question"
-              />
-            </IconButton>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Button
-            variant="contained"
-            className={classes.estimateButton}
-            onClick={() => {
-              getEstimate();
-            }}
-            disabled={estimateDisabled()}
+          <Grid
+            item
+            style={{ marginTop: "2em", marginLeft: matchesMd ? 0 : "5em" }}
           >
-            Get Estimate
-          </Button>
+            <Typography variant="h2" align={matchesMd ? "center" : undefined}>
+              Estimate
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            style={{
+              marginRight: matchesMd ? 0 : "10em",
+              maxWidth: "50em",
+              marginTop: "7.5em",
+            }}
+          >
+            <Animation
+              animationData={estimateAnimation}
+              height="100%"
+              width="100%"
+            />
+          </Grid>
         </Grid>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems="center"
+          lg
+          style={{ marginRight: matchesMd ? 0 : "2em", marginBottom: "25em" }}
+        >
+          {questions
+            .filter((question) => question.active)
+            .map((question, index) => (
+              <Fragment key={`${question.id}-${index}`}>
+                <Grid item>
+                  <Typography
+                    variant="h2"
+                    align="center"
+                    style={{
+                      fontSize: "2.25rem",
+                      fontWeight: 500,
+                      marginTop: "5em",
+                      lineHeight: "1.25",
+                      marginLeft: matchesSm ? "1em" : 0,
+                      marginRight: matchesSm ? "1em" : 0,
+                    }}
+                  >
+                    {question.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    align="center"
+                    style={{ marginBottom: "2.5em" }}
+                    gutterBottom
+                  >
+                    {question.subtitle}
+                  </Typography>
+                </Grid>
+                <Grid item container>
+                  {question.options.map((option, index) => (
+                    <Grid
+                      key={`${option.id}-${index}`}
+                      item
+                      container
+                      direction="column"
+                      md
+                      component={Button}
+                      onClick={() => handleSelect(option.id)}
+                      style={{
+                        display: "grid",
+                        textTransform: "none",
+                        borderRadius: 0,
+                        backgroundColor: option.selected
+                          ? theme.palette.common.orange
+                          : null,
+                        marginBottom: matchesSm ? "1.5em" : 0,
+                      }}
+                    >
+                      <Grid item style={{ maxWidth: "14em" }}>
+                        <Typography
+                          variant="h6"
+                          align="center"
+                          style={{ marginBottom: "1em" }}
+                        >
+                          {option.title}
+                        </Typography>
+                        <Typography variant="caption" align="center">
+                          {option.subtitle}
+                        </Typography>
+                      </Grid>
+                      <Grid item>
+                        <img
+                          src={option.icon}
+                          alt={option.iconAlt}
+                          className={classes.icon}
+                        />
+                      </Grid>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Fragment>
+            ))}
+
+          <Grid
+            item
+            container
+            justify="space-between"
+            style={{ width: "18em", marginTop: "3em" }}
+          >
+            <Grid item>
+              <IconButton
+                disabled={navigationPrevDisabled()}
+                onClick={prevQuestion}
+              >
+                <img
+                  src={
+                    navigationPrevDisabled()
+                      ? "/assets/backArrowDisabled.svg"
+                      : "/assets/backArrow.svg"
+                  }
+                  alt="previous question"
+                />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <IconButton
+                disabled={navigationNextDisabled()}
+                onClick={nextQuestion}
+              >
+                <img
+                  src={
+                    navigationNextDisabled()
+                      ? "/assets/forwardArrowDisabled.svg"
+                      : "/assets/forwardArrow.svg"
+                  }
+                  alt="next question"
+                />
+              </IconButton>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Button
+              variant="contained"
+              className={classes.estimateButton}
+              onClick={() => {
+                getEstimate();
+              }}
+              disabled={estimateDisabled()}
+            >
+              Get Estimate
+            </Button>
+          </Grid>
+        </Grid>
+        <Modal
+          isDialogOpen={dialogOpen}
+          changeDialogState={setDialogOpen}
+          total={total}
+          service={service}
+          platforms={platforms}
+          features={features}
+          customFeatures={customFeatures}
+          category={category}
+          users={users}
+          questions={questions}
+          matchesSm={matchesSm}
+        />
       </Grid>
-      <Modal
-        isDialogOpen={dialogOpen}
-        changeDialogState={setDialogOpen}
-        total={total}
-        service={service}
-        platforms={platforms}
-        features={features}
-        customFeatures={customFeatures}
-        category={category}
-        users={users}
-        questions={questions}
-        matchesSm={matchesSm}
-      />
-    </Grid>
+    </Fragment>
   );
 };
 

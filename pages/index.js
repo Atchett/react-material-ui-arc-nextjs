@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Head from "next/head";
 
 import { Grid, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -31,47 +32,70 @@ const Landing = (props) => {
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
-    <Grid container direction="column" className={classes.mainContainer}>
-      <Grid item>
-        <HeroBlock theme={theme} setValue={setValue} />
-      </Grid>
-      <Grid item>
-        <CustomSoftware
-          theme={theme}
-          matchesSm={matchesSm}
-          setValue={setValue}
-          setSelectedIndex={setSelectedIndex}
-          floatRight={false}
+    <Fragment>
+      <Head>
+        <title key="title">
+          Custom Software, Mobile Apps and Websites | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
         />
-      </Grid>
-      <Grid item>
-        <AppDevelopment
-          theme={theme}
-          matchesSm={matchesSm}
-          setValue={setValue}
-          setSelectedIndex={setSelectedIndex}
-          floatRight={true}
+        <meta
+          property="og:title"
+          content="Custom Software, Mobile Apps and Websites | Arc Development"
+          key="og:title"
         />
+        <meta property="og:url" content="https://arc.com" key="og:url" />
+        <link rel="canonical" key="canonical" href="https://arc.com" />
+      </Head>
+      <Grid container direction="column" className={classes.mainContainer}>
+        <Grid item>
+          <HeroBlock theme={theme} setValue={setValue} />
+        </Grid>
+        <Grid item>
+          <CustomSoftware
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+            setSelectedIndex={setSelectedIndex}
+            floatRight={false}
+          />
+        </Grid>
+        <Grid item>
+          <AppDevelopment
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+            setSelectedIndex={setSelectedIndex}
+            floatRight={true}
+          />
+        </Grid>
+        <Grid item>
+          <WebsiteDevelopment
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+            setSelectedIndex={setSelectedIndex}
+            floatRight={false}
+          />
+        </Grid>
+        <Grid item>
+          <Revolution theme={theme} setValue={setValue} />
+        </Grid>
+        <Grid item>
+          <InformationBlock matchesXS={matchesXS} setValue={setValue} />
+        </Grid>
+        <Grid item>
+          <CallToAction
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+          />
+        </Grid>
       </Grid>
-      <Grid item>
-        <WebsiteDevelopment
-          theme={theme}
-          matchesSm={matchesSm}
-          setValue={setValue}
-          setSelectedIndex={setSelectedIndex}
-          floatRight={false}
-        />
-      </Grid>
-      <Grid item>
-        <Revolution theme={theme} setValue={setValue} />
-      </Grid>
-      <Grid item>
-        <InformationBlock matchesXS={matchesXS} setValue={setValue} />
-      </Grid>
-      <Grid item>
-        <CallToAction theme={theme} matchesSm={matchesSm} setValue={setValue} />
-      </Grid>
-    </Grid>
+    </Fragment>
   );
 };
 

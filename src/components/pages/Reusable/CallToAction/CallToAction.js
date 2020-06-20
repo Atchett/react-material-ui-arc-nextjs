@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 5,
   },
   ctaContainer: {
-    backgroundImage: "url('/assets/background.jpg')",
+    backgroundImage: `url('/assets/background.jpg')`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     [theme.breakpoints.down("md")]: {
       backgroundAttachment: "inherit",
-      backgroundImage: "url('/assets/mobileBackground.jpg')",
+      backgroundImage: `url('/assets/mobileBackground.jpg')`,
     },
   },
   ctaContentContainer: {

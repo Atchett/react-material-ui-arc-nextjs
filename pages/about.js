@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import clsx from "clsx";
+import Head from "next/head";
 
 import { Typography, Grid, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -50,55 +51,78 @@ const AboutUs = (props) => {
   const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid container direction="column">
-      <Grid
-        item
-        className={clsx(classes.rowContainer, classes.headerTitle)}
-        align={matchesMd ? "center" : undefined}
-      >
-        <Typography variant="h2">About Us</Typography>
-      </Grid>
-      <Grid
-        item
-        container
-        justify="center"
-        className={clsx(classes.rowContainer, classes.missionStatementItem)}
-      >
-        <Typography
-          variant="h4"
-          align="center"
-          className={classes.missionStatement}
+    <Fragment>
+      <Head>
+        <title key="title">
+          About Us - History &amp; Team | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
+        />
+        <meta
+          property="og:title"
+          content="About Us - History &amp; Team | Arc Development"
+          key="og:title"
+        />
+        <meta property="og:url" content="https://arc.com/about" key="og:url" />
+        <link rel="canonical" key="canonical" href="https://arc.com/about" />
+      </Head>
+      <Grid container direction="column">
+        <Grid
+          item
+          className={clsx(classes.rowContainer, classes.headerTitle)}
+          align={matchesMd ? "center" : undefined}
         >
-          Whether it be person to person, business to consumer, or an individual
-          to their interests, technology is meant to bring us closer to what we
-          care about in the best way possible. Arc Development will use that
-          principle to provide fast, modern, inexpensive, and aesthetic software
-          to the Midwest and beyond.
-        </Typography>
+          <Typography variant="h2">About Us</Typography>
+        </Grid>
+        <Grid
+          item
+          container
+          justify="center"
+          className={clsx(classes.rowContainer, classes.missionStatementItem)}
+        >
+          <Typography
+            variant="h4"
+            align="center"
+            className={classes.missionStatement}
+          >
+            Whether it be person to person, business to consumer, or an
+            individual to their interests, technology is meant to bring us
+            closer to what we care about in the best way possible. Arc
+            Development will use that principle to provide fast, modern,
+            inexpensive, and aesthetic software to the Midwest and beyond.
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          container
+          className={clsx(classes.rowContainer, classes.historyItem)}
+          direction={matchesMd ? "column" : "row"}
+          alignItems={matchesMd ? "center" : undefined}
+          justify="space-around"
+        >
+          <History matchesMd={matchesMd} />
+        </Grid>
+        <Grid
+          item
+          container
+          direction="column"
+          className={clsx(classes.rowContainer, classes.teamItem)}
+          alignItems="center"
+        >
+          <Team matchesMd={matchesMd} />
+        </Grid>
+        <Grid item>
+          <CallToAction
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+          />
+        </Grid>
       </Grid>
-      <Grid
-        item
-        container
-        className={clsx(classes.rowContainer, classes.historyItem)}
-        direction={matchesMd ? "column" : "row"}
-        alignItems={matchesMd ? "center" : undefined}
-        justify="space-around"
-      >
-        <History matchesMd={matchesMd} />
-      </Grid>
-      <Grid
-        item
-        container
-        direction="column"
-        className={clsx(classes.rowContainer, classes.teamItem)}
-        alignItems="center"
-      >
-        <Team matchesMd={matchesMd} />
-      </Grid>
-      <Grid item>
-        <CallToAction theme={theme} matchesSm={matchesSm} setValue={setValue} />
-      </Grid>
-    </Grid>
+    </Fragment>
   );
 };
 

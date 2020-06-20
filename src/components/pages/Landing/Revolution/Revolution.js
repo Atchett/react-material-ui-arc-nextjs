@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   revolutionBackground: {
-    backgroundImage: "url('/assets/repeatingBackground.svg')",
+    backgroundImage: `url('/assets/repeatingBackground.svg')`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
 import clsx from "clsx";
+import Head from "next/head";
 
 import { Grid, Typography, useMediaQuery } from "@material-ui/core";
 import { useTheme, makeStyles } from "@material-ui/core/styles";
@@ -53,107 +54,138 @@ const Revolution = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid container direction="column">
-      <Grid
-        item
-        container
-        direction={matchesMd ? "column" : "row"}
-        className={clsx(classes.rowContainer, classes.headerTop)}
-        alignItems="center"
-      >
+    <Fragment>
+      <Head>
+        <title key="title">
+          The Revolution - cutting-edge software | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
+        />
+        <meta
+          property="og:title"
+          content="The Revolution - cutting-edge software | Arc Development"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          content="https://arc.com/revolution"
+          key="og:url"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://arc.com/revolution"
+        />
+      </Head>
+      <Grid container direction="column">
         <Grid
           item
           container
-          direction="column"
-          lg
-          className={classes.contentContainer}
+          direction={matchesMd ? "column" : "row"}
+          className={clsx(classes.rowContainer, classes.headerTop)}
+          alignItems="center"
+        >
+          <Grid
+            item
+            container
+            direction="column"
+            lg
+            className={classes.contentContainer}
+          >
+            <Grid item>
+              <Typography
+                align={matchesMd ? "center" : undefined}
+                variant="h2"
+                className={classes.headerFont}
+              >
+                The Revolution
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          container
+          direction={matchesMd ? "column" : "row"}
+          className={clsx(classes.rowContainer, classes.visionTop)}
+          alignItems="center"
+        >
+          <Vision matchesMd={matchesMd} />
+        </Grid>
+        <Grid
+          item
+          container
+          direction={matchesMd ? "column" : "row"}
+          className={clsx(classes.rowContainer, classes.techMargins)}
+          alignItems="center"
+        >
+          <Technology matchesMd={matchesMd} />
+        </Grid>
+        <Grid
+          item
+          container
+          direction="row"
+          justify="center"
+          className={classes.rowContainer}
         >
           <Grid item>
             <Typography
               align={matchesMd ? "center" : undefined}
-              variant="h2"
-              className={classes.headerFont}
+              variant="h4"
+              gutterBottom
             >
-              The Revolution
+              Process
             </Typography>
           </Grid>
         </Grid>
-      </Grid>
-      <Grid
-        item
-        container
-        direction={matchesMd ? "column" : "row"}
-        className={clsx(classes.rowContainer, classes.visionTop)}
-        alignItems="center"
-      >
-        <Vision matchesMd={matchesMd} />
-      </Grid>
-      <Grid
-        item
-        container
-        direction={matchesMd ? "column" : "row"}
-        className={clsx(classes.rowContainer, classes.techMargins)}
-        alignItems="center"
-      >
-        <Technology matchesMd={matchesMd} />
-      </Grid>
-      <Grid
-        item
-        container
-        direction="row"
-        justify="center"
-        className={classes.rowContainer}
-      >
+
+        <GridBlock matchesMd={matchesMd} blockColour="#b3b3b3">
+          <Consultation matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#ff7373">
+          <Mockup matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#39b54a">
+          <Review matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#a67c52">
+          <Design matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#39b54a">
+          <Review2 matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#fbb03b">
+          <Build matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#c1272d">
+          <Launch matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#8e45ce">
+          <Maintain matchesMd={matchesMd} />
+        </GridBlock>
+
+        <GridBlock matchesMd={matchesMd} blockColour="#29abe2">
+          <Iterate matchesMd={matchesMd} />
+        </GridBlock>
         <Grid item>
-          <Typography
-            align={matchesMd ? "center" : undefined}
-            variant="h4"
-            gutterBottom
-          >
-            Process
-          </Typography>
+          <CallToAction
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+          />
         </Grid>
       </Grid>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#b3b3b3">
-        <Consultation matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#ff7373">
-        <Mockup matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#39b54a">
-        <Review matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#a67c52">
-        <Design matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#39b54a">
-        <Review2 matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#fbb03b">
-        <Build matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#c1272d">
-        <Launch matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#8e45ce">
-        <Maintain matchesMd={matchesMd} />
-      </GridBlock>
-
-      <GridBlock matchesMd={matchesMd} blockColour="#29abe2">
-        <Iterate matchesMd={matchesMd} />
-      </GridBlock>
-      <Grid item>
-        <CallToAction theme={theme} matchesSm={matchesSm} setValue={setValue} />
-      </Grid>
-    </Grid>
+    </Fragment>
   );
 };
 

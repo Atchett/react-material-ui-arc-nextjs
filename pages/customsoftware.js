@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import clsx from "clsx";
+import Head from "next/head";
 
 import { Grid, useMediaQuery } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -43,6 +44,31 @@ const CustomSoftware = (props) => {
 
   return (
     <Fragment>
+      <Head>
+        <title key="title">
+          Custom Software Development &amp; Design | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
+        />
+        <meta
+          property="og:title"
+          content="Custom Software Development &amp; Design | Arc Development"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          content="https://arc.com/customsoftware"
+          key="og:url"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://arc.com/customsoftware"
+        />
+      </Head>
       <Grid container direction="column" wrap="nowrap">
         <Grid
           item

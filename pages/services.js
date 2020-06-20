@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Head from "next/head";
 
 import { Grid, Typography, useMediaQuery } from "@material-ui/core";
 import { useTheme, makeStyles } from "@material-ui/core/styles";
@@ -34,44 +35,67 @@ const Services = (props) => {
   const classes = useStyles();
 
   return (
-    <Grid container direction="column">
-      <Grid item className={classes.headerTitle}>
-        <Typography
-          align={matchesSm ? "center" : undefined}
-          variant="h2"
-          gutterBottom
-        >
-          Services
-        </Typography>
-      </Grid>
-      <Grid item className={classes.blockTop}>
-        <CustomSoftware
-          theme={theme}
-          matchesSm={matchesSm}
-          setValue={setValue}
-          setSelectedIndex={setSelectedIndex}
-          floatRight={true}
+    <Fragment>
+      <Head>
+        <title key="title">
+          Top custom software development services | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Approx 160 chars!"
         />
-      </Grid>
-      <Grid item>
-        <AppDevelopment
-          theme={theme}
-          matchesSm={matchesSm}
-          setValue={setValue}
-          setSelectedIndex={setSelectedIndex}
-          floatRight={false}
+        <meta
+          property="og:title"
+          content="Top custom software development services | Arc Development"
+          key="og:title"
         />
-      </Grid>
-      <Grid item className={classes.blockBottom}>
-        <WebsiteDevelopment
-          theme={theme}
-          matchesSm={matchesSm}
-          setValue={setValue}
-          setSelectedIndex={setSelectedIndex}
-          floatRight={true}
+        <meta
+          property="og:url"
+          content="https://arc.com/services"
+          key="og:url"
         />
+        <link rel="canonical" key="canonical" href="https://arc.com/services" />
+      </Head>
+      <Grid container direction="column">
+        <Grid item className={classes.headerTitle}>
+          <Typography
+            align={matchesSm ? "center" : undefined}
+            variant="h2"
+            gutterBottom
+          >
+            Services
+          </Typography>
+        </Grid>
+        <Grid item className={classes.blockTop}>
+          <CustomSoftware
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+            setSelectedIndex={setSelectedIndex}
+            floatRight={true}
+          />
+        </Grid>
+        <Grid item>
+          <AppDevelopment
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+            setSelectedIndex={setSelectedIndex}
+            floatRight={false}
+          />
+        </Grid>
+        <Grid item className={classes.blockBottom}>
+          <WebsiteDevelopment
+            theme={theme}
+            matchesSm={matchesSm}
+            setValue={setValue}
+            setSelectedIndex={setSelectedIndex}
+            floatRight={true}
+          />
+        </Grid>
       </Grid>
-    </Grid>
+    </Fragment>
   );
 };
 
