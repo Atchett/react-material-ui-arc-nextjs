@@ -61,7 +61,7 @@ const Services = (props) => {
         <Grid item className={classes.headerTitle}>
           <Typography
             align={matchesSm ? "center" : undefined}
-            variant="h2"
+            variant="h1"
             gutterBottom
           >
             Services

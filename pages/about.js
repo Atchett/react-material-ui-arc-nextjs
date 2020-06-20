@@ -75,7 +75,7 @@ const AboutUs = (props) => {
           className={clsx(classes.rowContainer, classes.headerTitle)}
           align={matchesMd ? "center" : undefined}
         >
-          <Typography variant="h2">About Us</Typography>
+          <Typography variant="h1">About Us</Typography>
         </Grid>
         <Grid
           item

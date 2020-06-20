@@ -98,7 +98,7 @@ const Revolution = (props) => {
             <Grid item>
               <Typography
                 align={matchesMd ? "center" : undefined}
-                variant="h2"
+                variant="h1"
                 className={classes.headerFont}
               >
                 The Revolution

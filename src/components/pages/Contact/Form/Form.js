@@ -186,7 +186,7 @@ const Form = (props) => {
           <Grid item>
             <Typography
               align={matchesMd ? "center" : undefined}
-              variant="h2"
+              variant="h1"
               style={{ lineHeight: 1 }}
             >
               Contact Us

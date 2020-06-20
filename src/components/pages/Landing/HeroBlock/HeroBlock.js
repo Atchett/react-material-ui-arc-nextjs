@@ -55,7 +55,7 @@ const HeroBlock = (props) => {
   return (
     <Grid container direction="row" justify="flex-end" alignItems="center">
       <Grid item sm className={classes.heroTextContainer}>
-        <Typography variant="h2" align="center">
+        <Typography variant="h1" align="center">
           Bringing West Coast Technology
           <br /> to the Midwest
         </Typography>

@@ -47,7 +47,7 @@ const AboutAppDevelopment = (props) => {
       </Hidden>
       <Grid item container direction="column" className={classes.heading}>
         <Grid item>
-          <Typography variant="h2" align={matchesMd ? "center" : undefined}>
+          <Typography variant="h1" align={matchesMd ? "center" : undefined}>
             iOS/Android App Development
           </Typography>
         </Grid>

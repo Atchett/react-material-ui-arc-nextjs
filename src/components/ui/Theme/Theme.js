@@ -18,10 +18,17 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    h2: {
+    h1: {
       fontFamily: "Raleway",
       fontWeight: 700,
       fontSize: "2.5rem",
+      color: arcBlue,
+      lineHeight: 1.5,
+    },
+    h2: {
+      fontFamily: "Raleway",
+      fontWeight: 700,
+      fontSize: "2.25rem",
       color: arcBlue,
       lineHeight: 1.5,
     },

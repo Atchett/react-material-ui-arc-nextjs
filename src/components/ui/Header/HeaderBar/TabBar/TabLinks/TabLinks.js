@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 10,
     marginLeft: "25px",
   },
+  disableUnderline: {
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
 }));
 
 const TabLinks = (props) => {
@@ -40,6 +45,7 @@ const TabLinks = (props) => {
           aria-owns={route.ariaOwns}
           aria-haspopup={route.ariaPopup}
           onMouseOver={route.mouseOver}
+          className={classes.disableUnderline}
         />
       ))}
     </Tabs>
