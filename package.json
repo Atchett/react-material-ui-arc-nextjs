@@ -23,7 +23,6 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "postbuild": "node scripts/sitemap.js",
-    "heroku-postbuild": "npm run build"
+    "postbuild": "node scripts/sitemap.js"
   }
 }
