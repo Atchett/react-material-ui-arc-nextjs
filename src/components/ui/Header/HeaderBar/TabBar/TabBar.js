@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     ...theme.typography.estimate,
     borderRadius: "50px",
-    marginLeft: "50px",
+    //marginLeft: "50px",
     marginRight: "25px",
     height: "45px",
     "&:hover": {

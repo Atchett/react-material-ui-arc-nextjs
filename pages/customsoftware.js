@@ -97,8 +97,9 @@ const CustomSoftware = (props) => {
           container
           direction={matchesMd ? "column" : "row"}
           alignItems={matchesMd ? "center" : undefined}
-          justify="space-between"
+          justify={matchesMd ? "center" : "space-between"}
           className={clsx(classes.containerSpacing, classes.rowContainer)}
+          style={{ display: matchesMd ? "grid" : undefined }}
         >
           <DigitalDocumentsScale matchesMd={matchesMd} matchesSm={matchesSm} />
         </Grid>
@@ -116,12 +117,13 @@ const CustomSoftware = (props) => {
           container
           direction={matchesMd ? "column" : "row"}
           alignItems={matchesMd ? "center" : undefined}
-          justify="space-between"
+          justify={matchesMd ? "center" : "space-between"}
           className={clsx(
             classes.containerSpacing,
             classes.rowContainer,
             classes.preCTASpacing
           )}
+          style={{ display: matchesMd ? "grid" : undefined }}
         >
           <AutomationUIDesign matchesMd={matchesMd} matchesSm={matchesSm} />
         </Grid>

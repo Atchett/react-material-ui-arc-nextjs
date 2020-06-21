@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 
 import { Tab, Tabs } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
@@ -13,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.tab,
     minWidth: 10,
     marginLeft: "25px",
+    textTransform: "none",
   },
   disableUnderline: {
     "&:hover": {
@@ -38,14 +40,13 @@ const TabLinks = (props) => {
       {props.routes.map((route, i) => (
         <Tab
           key={i}
-          className={classes.tab}
+          className={clsx(classes.tab, classes.disableUnderline)}
           component={Link}
           href={route.link}
           label={route.name}
           aria-owns={route.ariaOwns}
           aria-haspopup={route.ariaPopup}
           onMouseOver={route.mouseOver}
-          className={classes.disableUnderline}
         />
       ))}
     </Tabs>

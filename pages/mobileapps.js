@@ -89,11 +89,12 @@ const AppDevelopment = (props) => {
           justify={matchesMd ? "center" : undefined}
           className={clsx(classes.rowContainer, classes.containerSpacing)}
         >
-          <IntegrationPlatform matchesSm={matchesSm} />
+          <IntegrationPlatform matchesSm={matchesSm} matchesMd={matchesMd} />
         </Grid>
         <Grid
           item
           container
+          style={{ display: matchesMd ? "grid" : undefined }}
           direction={matchesMd ? "column" : "row"}
           justify="center"
           className={clsx(

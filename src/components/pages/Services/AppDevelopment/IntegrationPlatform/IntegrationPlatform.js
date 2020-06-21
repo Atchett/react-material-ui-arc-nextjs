@@ -6,7 +6,7 @@ import integrationAnimation from "../../../../../animations/integrationAnimation
 import Animation from "../../../../ui/Animation/Animation";
 
 const IntegrationPlatform = (props) => {
-  const { matchesSm } = props;
+  const { matchesSm, matchesMd } = props;
 
   return (
     <Fragment>
@@ -43,7 +43,10 @@ const IntegrationPlatform = (props) => {
       <Grid item md>
         <Animation
           animationData={integrationAnimation}
-          style={{ maxWidth: "20em" }}
+          style={{
+            maxWidth: matchesMd ? "15em" : "20em",
+            height: matchesMd ? "20em" : undefined,
+          }}
         />
       </Grid>
       <Grid item container direction="column" md>
