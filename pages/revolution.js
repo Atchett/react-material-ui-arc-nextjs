@@ -71,13 +71,13 @@ const Revolution = (props) => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/revolution"
+          content="https://mui.hitrefresh.co.uk/revolution"
           key="og:url"
         />
         <link
           rel="canonical"
           key="canonical"
-          href="https://arc.com/revolution"
+          href="https://mui.hitrefresh.co.uk/revolution"
         />
       </Head>
       <Grid container direction="column">

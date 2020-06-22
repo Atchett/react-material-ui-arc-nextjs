@@ -57,10 +57,14 @@ const WebsiteDevelopment = (props) => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/websites"
+          content="https://mui.hitrefresh.co.uk/websites"
           key="og:url"
         />
-        <link rel="canonical" key="canonical" href="https://arc.com/websites" />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://mui.hitrefresh.co.uk/websites"
+        />
       </Head>
       <Grid item container direction="column" wrap="nowrap">
         <Grid

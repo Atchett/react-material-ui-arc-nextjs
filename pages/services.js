@@ -52,10 +52,14 @@ const Services = (props) => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/services"
+          content="https://mui.hitrefresh.co.uk/services"
           key="og:url"
         />
-        <link rel="canonical" key="canonical" href="https://arc.com/services" />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://mui.hitrefresh.co.uk/services"
+        />
       </Head>
       <Grid container direction="column">
         <Grid item className={classes.headerTitle}>

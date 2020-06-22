@@ -57,10 +57,14 @@ const Contact = (props) => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/contact"
+          content="https://mui.hitrefresh.co.uk/contact"
           key="og:url"
         />
-        <link rel="canonical" key="canonical" href="https://arc.com/contact" />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://mui.hitrefresh.co.uk/contact"
+        />
       </Head>
       <Grid container direction="row">
         <Grid

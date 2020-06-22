@@ -66,8 +66,8 @@ const AboutUs = (props) => {
           content="About Us - History &amp; Team | Arc Development"
           key="og:title"
         />
-        <meta property="og:url" content="https://arc.com/about" key="og:url" />
-        <link rel="canonical" key="canonical" href="https://arc.com/about" />
+        <meta property="og:url" content="https://mui.hitrefresh.co.uk/about" key="og:url" />
+        <link rel="canonical" key="canonical" href="https://mui.hitrefresh.co.uk/about" />
       </Head>
       <Grid container direction="column">
         <Grid

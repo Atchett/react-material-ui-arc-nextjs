@@ -60,13 +60,13 @@ const CustomSoftware = (props) => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/customsoftware"
+          content="https://mui.hitrefresh.co.uk/customsoftware"
           key="og:url"
         />
         <link
           rel="canonical"
           key="canonical"
-          href="https://arc.com/customsoftware"
+          href="https://mui.hitrefresh.co.uk/customsoftware"
         />
       </Head>
       <Grid container direction="column" wrap="nowrap">

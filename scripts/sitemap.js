@@ -4,8 +4,8 @@ const formatDate = require("./formatDate");
 
 // ROBOTS.txt
 const robotsTxt = `User-agent: *
-Sitemap: https://arc.com/sitemap_local.xml
-Disallow:`;
+Sitemap: https://mui.hitrefresh.co.uk/sitemap_local.xml
+Disallow: /`;
 
 fs.writeFileSync("public/robots.txt", robotsTxt);
 console.log("robots.txt saved!");
@@ -16,14 +16,14 @@ const today = formatDate(new Date());
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${Object.keys(pathsObj)
-    .filter(path => path !== "/_document" && path !== "/_app")
+    .filter((path) => path !== "/_document" && path !== "/_app")
 
     .map(
-      path => `<url>
+      (path) => `<url>
     ${
       path === "/index"
-        ? `<loc>https://arc.com</loc>`
-        : `<loc>https://arc.com${path}</loc>`
+        ? `<loc>https://mui.hitrefresh.co.uk</loc>`
+        : `<loc>https://mui.hitrefresh.co.uk${path}</loc>`
     }
     <lastmod>${
       pathsObj[path].lastModified

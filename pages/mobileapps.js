@@ -59,13 +59,13 @@ const AppDevelopment = (props) => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/mobileapps"
+          content="https://mui.hitrefresh.co.uk/mobileapps"
           key="og:url"
         />
         <link
           rel="canonical"
           key="canonical"
-          href="https://arc.com/mobileapps"
+          href="https://mui.hitrefresh.co.uk/mobileapps"
         />
       </Head>
       <Grid container direction="column" wrap="nowrap">

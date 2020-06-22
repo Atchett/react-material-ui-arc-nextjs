@@ -214,10 +214,14 @@ const Estimate = () => {
         />
         <meta
           property="og:url"
-          content="https://arc.com/estimate"
+          content="https://mui.hitrefresh.co.uk/estimate"
           key="og:url"
         />
-        <link rel="canonical" key="canonical" href="https://arc.com/estimate" />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://mui.hitrefresh.co.uk/estimate"
+        />
       </Head>
       <Grid container direction="row">
         <Grid

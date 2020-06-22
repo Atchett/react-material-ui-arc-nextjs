@@ -47,8 +47,16 @@ const Landing = (props) => {
           content="Custom Software, Mobile Apps and Websites | Arc Development"
           key="og:title"
         />
-        <meta property="og:url" content="https://arc.com" key="og:url" />
-        <link rel="canonical" key="canonical" href="https://arc.com" />
+        <meta
+          property="og:url"
+          content="https://mui.hitrefresh.co.uk"
+          key="og:url"
+        />
+        <link
+          rel="canonical"
+          key="canonical"
+          href="https://mui.hitrefresh.co.uk"
+        />
       </Head>
       <Grid container direction="column" className={classes.mainContainer}>
         <Grid item>
