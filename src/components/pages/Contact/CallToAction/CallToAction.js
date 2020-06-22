@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import ReactGA from "react-ga";
 
 import { Grid, Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
@@ -95,7 +96,13 @@ const CallToAction = (props) => {
           className={classes.estimateButton}
           component={Link}
           href="/estimate"
-          onClick={() => setValue(false)}
+          onClick={() => {
+            setValue(false);
+            ReactGA.event({
+              category: "Estimate",
+              action: "Contact estimate button pressed",
+            });
+          }}
         >
           Free Estimate
         </Button>

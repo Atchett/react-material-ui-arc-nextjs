@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import ReactGA from "react-ga";
 import { cloneDeep } from "lodash";
 import Head from "next/head";
 
@@ -160,6 +161,11 @@ const Estimate = () => {
     setCategory(getCategory(questions));
     setCustomFeatures(getCustomFeatures(questions));
     setUsers(getUsers(questions));
+    ReactGA.event({
+      category: "Estimate",
+      action: "Estimate opened for checking",
+    });
+
     return;
   };
 

@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
 import Link from "../../../../../Link";
+import ReactGA from "react-ga";
 
 import { Button, IconButton, Hidden } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/styles";
@@ -40,6 +41,7 @@ const TabBar = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { value, setValue, selectedIndex, setSelectedIndex } = props;
+  const [prevURL, setPrevURL] = useState("");
 
   const theme = useTheme();
 
@@ -128,6 +130,12 @@ const TabBar = (props) => {
   useEffect(() => {
     const pathName = window.location.pathname;
 
+    // Google analytics implementation
+    if (prevURL !== pathName) {
+      setPrevURL(pathName);
+      ReactGA.pageview(pathName + window.location.search);
+    }
+
     [...menuOptions, ...routes].forEach((route) => {
       switch (pathName) {
         case `${route.link}`:
@@ -167,7 +175,13 @@ const TabBar = (props) => {
         variant="contained"
         color="secondary"
         className={classes.button}
-        onClick={() => setValue(false)}
+        onClick={() => {
+          setValue(false);
+          ReactGA.event({
+            category: "Estimate",
+            action: "Desktop estimate button pressed",
+          });
+        }}
       >
         Free Estimate
       </Button>

@@ -1,4 +1,6 @@
 import React, { useState, Fragment } from "react";
+import ReactGA from "react-ga";
+
 import clsx from "clsx";
 import axios from "axios";
 
@@ -126,6 +128,10 @@ const Form = (props) => {
         },
       })
       .then((res) => {
+        ReactGA.event({
+          category: "Message",
+          action: "Sent message",
+        });
         setLoading(false);
         setOpen(false);
         resetFields();

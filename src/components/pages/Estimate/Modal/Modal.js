@@ -1,4 +1,6 @@
 import React, { useState, Fragment } from "react";
+import ReactGA from "react-ga";
+
 import axios from "axios";
 
 import {
@@ -247,6 +249,10 @@ const Modal = (props) => {
         },
       })
       .then((res) => {
+        ReactGA.event({
+          category: "Estimate",
+          action: "Estimate sent",
+        });
         setLoading(false);
         setAlert({
           open: true,

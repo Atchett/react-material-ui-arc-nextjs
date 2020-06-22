@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 
 import { Grid, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -71,7 +72,13 @@ const HeroBlock = (props) => {
               component={Link}
               href="/estimate"
               className={classes.estimateButton}
-              onClick={() => setValue(false)}
+              onClick={() => {
+                setValue(false);
+                ReactGA.event({
+                  category: "Estimate",
+                  action: "Hero block estimate button pressed",
+                });
+              }}
             >
               Free Estimate
             </Button>

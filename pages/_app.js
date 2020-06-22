@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
+import ReactGA from "react-ga";
+
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../src/components/ui/Theme/Theme";
 
 import Header from "../src/components/ui/Header/Header";
 import Footer from "../src/components/ui/Footer/Footer";
+
+ReactGA.initialize("UA-11281702-4");
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;

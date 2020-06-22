@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 
 import {
   SwipeableDrawer,
@@ -81,6 +82,10 @@ const ResponsiveDrawer = (props) => {
           onClick={() => {
             props.drawerOpenHandler(false);
             props.tabChangeHandler(5);
+            ReactGA.event({
+              category: "Estimate",
+              action: "Mobile estimate button pressed",
+            });
           }}
           classes={{
             root: classes.drawerItemEstimate,
